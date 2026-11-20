@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Космос — цікаві факти</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: #eee;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            padding: 40px 30px;
+            max-width: 600px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #a78bfa, #60a5fa, #f472b6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .subtitle {
+            color: #9ca3af;
+            margin-bottom: 30px;
+            font-size: 1rem;
+        }
+
+        .fact-box {
+            background: rgba(0, 0, 0, 0.25);
+            border-radius: 14px;
+            padding: 25px;
+            margin-bottom: 25px;
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            transition: opacity 0.4s ease;
+        }
+
+        button {
+            background: linear-gradient(90deg, #7c3aed, #3b82f6);
+            color: white;
+            border: none;
+            padding: 14px 32px;
+            font-size: 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(124, 58, 237, 0.5);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        footer {
+            margin-top: 25px;
+            font-size: 0.8rem;
+            color: #6b7280;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>🌌 Космос</h1>
+        <p class="subtitle">Випадковий факт про Всесвіт</p>
+
+        <div class="fact-box" id="factBox">
+            Натисни кнопку, щоб дізнатися щось цікаве!
+        </div>
+
+        <button onclick="newFact()">Новий факт ✨</button>
+
+        <footer>© 2025 · Зроблено з цікавості до зірок</footer>
+    </div>
+
+    <script>
+        const facts = [
+            "У космосі немає звуку, бо там немає повітря для передачі звукових хвиль.",
+            "Сонячне світло доходить до Землі приблизно за 8 хвилин 20 секунд.",
+            "На Венері день довший за рік — вона обертається навколо осі повільніше, ніж навколо Сонця.",
+            "У Чумацькому Шляху близько 100–400 мільярдів зірок.",
+            "Нейтронна зірка настільки щільна, що чайна ложка її речовини важила б мільярди тонн.",
+            "На Місяці сліди астронавтів можуть зберігатися мільйони років, бо там немає вітру.",
+            "Юпітер має найбільшу планету Сонячної системи — він більший за всі інші планети разом узяті.",
+            "Світло від найдальших видимих галактик летить до нас понад 13 мільярдів років.",
+            "Космічний пил становить близько 1% маси Чумацького Шляху.",
+            "Якби Сонце раптом зникло, ми дізналися б про це лише через 8 хвилин."
+        ];
+
+        function newFact() {
+            const box = document.getElementById('factBox');
+            const randomIndex = Math.floor(Math.random() * facts.length);
+
+            box.style.opacity = 0;
+
+            setTimeout(() => {
+                box.textContent = facts[randomIndex];
+                box.style.opacity = 1;
+            }, 300);
+        }
+    </script>
+
+</body>
+</html>
