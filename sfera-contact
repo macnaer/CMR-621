@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакти — Prisepadana</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #1e1b4b, #312e81, #1e40af);
+            color: #f1f5f9;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 24px;
+            padding: 45px 35px;
+            max-width: 480px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+        }
+
+        .avatar {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #60a5fa, #a78bfa);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            box-shadow: 0 6px 20px rgba(96, 165, 250, 0.4);
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+            background: linear-gradient(90deg, #93c5fd, #c4b5fd);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .subtitle {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: rgba(0, 0, 0, 0.25);
+            border-radius: 14px;
+            padding: 16px 20px;
+            margin-bottom: 14px;
+            text-decoration: none;
+            color: #f1f5f9;
+            transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-3px);
+            background: rgba(0, 0, 0, 0.4);
+            box-shadow: 0 8px 24px rgba(96, 165, 250, 0.3);
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .contact-info {
+            text-align: left;
+        }
+
+        .contact-label {
+            font-size: 0.75rem;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 3px;
+        }
+
+        .contact-value {
+            font-size: 1rem;
+            font-weight: 600;
+            word-break: break-all;
+        }
+
+        footer {
+            margin-top: 28px;
+            font-size: 0.8rem;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contact-card">
+        <div class="avatar">📬</div>
+        <h1>Зв'яжіться зі мною</h1>
+        <p class="subtitle">Завжди радий(а) новим повідомленням</p>
+
+        <!-- Email -->
+        <a class="contact-item" href="mailto:prisepadana24@gmail.com">
+            <span class="contact-icon">✉️</span>
+            <div class="contact-info">
+                <div class="contact-label">Email</div>
+                <div class="contact-value">prisepadana24@gmail.com</div>
+            </div>
+        </a>
+
+        <!-- Telegram -->
+        <a class="contact-item" href="https://t.me/+380965758524" target="_blank" rel="noopener">
+            <span class="contact-icon">💬</span>
+            <div class="contact-info">
+                <div class="contact-label">Telegram</div>
+                <div class="contact-value">+380 96 575 85 24</div>
+            </div>
+        </a>
+
+        <!-- Дзвінок -->
+        <a class="contact-item" href="tel:+380965758524">
+            <span class="contact-icon">📞</span>
+            <div class="contact-info">
+                <div class="contact-label">Телефон</div>
+                <div class="contact-value">+380 96 575 85 24</div>
+            </div>
+        </a>
+
+        <footer>© 2025 · Prisepadana</footer>
+    </div>
+
+</body>
+</html>
