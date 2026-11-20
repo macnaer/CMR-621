@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101827">
+  <meta name="description" content="Контакти SeWa — напиши мені в Telegram або надішли листа на email.">
+  <title>SeWa — контакти</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root { color-scheme: dark; --night:#101827; --blue:#96b8ff; --mint:#77ead0; --paper:#e9f0fa; --muted:#9aa9be; --line:rgba(190,211,240,.14); --mono:"DM Mono","Courier New",monospace; --sans:"Manrope","Segoe UI",sans-serif; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; min-width:320px; min-height:100vh; background:var(--night); color:var(--paper); font-family:var(--sans); -webkit-font-smoothing:antialiased; }
+    a { color:inherit; }
+    a:focus-visible,button:focus-visible { outline:2px solid var(--mint); outline-offset:5px; }
+    .page { width:min(1160px,calc(100% - 64px)); margin-inline:auto; }
+    header { height:82px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--line); }
+    .brand { display:flex; align-items:center; gap:11px; text-decoration:none; font-size:17px; font-weight:800; letter-spacing:-.06em; }
+    .brand-mark { width:31px; height:31px; display:grid; place-items:center; border:1px solid rgba(119,234,208,.5); border-radius:10px 10px 10px 3px; color:var(--mint); font:13px var(--mono); }
+    nav { display:flex; gap:27px; color:var(--muted); font-size:13px; }
+    nav a { text-decoration:none; transition:color .2s; }
+    nav a:hover { color:var(--paper); }
+    main { min-height:calc(100vh - 158px); display:grid; grid-template-columns:1.03fr .97fr; align-items:center; gap:55px; padding-block:58px; }
+    .eyebrow { margin:0 0 23px; color:var(--mint); font:12px var(--mono); }
+    h1 { max-width:580px; margin:0; font-size:clamp(55px,8vw,94px); line-height:.98; letter-spacing:-.085em; font-weight:700; }
+    h1 span { display:block; color:var(--blue); }
+    .lead { max-width:430px; margin:23px 0 0; color:#b3c0d1; font-size:16px; line-height:1.8; }
+    .contact-list { display:grid; gap:14px; margin-top:34px; }
+    .contact { min-height:88px; padding:18px 20px; display:flex; align-items:center; gap:16px; border:1px solid var(--line); border-radius:7px; text-decoration:none; background:rgba(23,34,53,.52); transition:border-color .2s,background .2s,transform .2s; }
+    .contact:hover { border-color:rgba(119,234,208,.55); background:rgba(23,34,53,.9); transform:translateY(-2px); }
+    .icon { flex:0 0 43px; width:43px; height:43px; display:grid; place-items:center; border:1px solid rgba(150,184,255,.28); border-radius:12px; color:var(--mint); font:18px var(--mono); }
+    .contact-copy { min-width:0; }
+    .contact-copy small { display:block; margin-bottom:4px; color:var(--muted); font-size:11px; }
+    .contact-copy strong { display:block; overflow-wrap:anywhere; color:var(--paper); font-size:14px; font-weight:600; }
+    .external { margin-left:auto; color:var(--blue); font-size:17px; }
+    .orb-stage { position:relative; height:480px; display:grid; place-items:center; isolation:isolate; }
+    .orb-stage::before { content:""; position:absolute; z-index:-1; width:350px; height:350px; border-radius:50%; background:radial-gradient(circle,rgba(101,153,230,.19),rgba(63,107,176,.06) 48%,transparent 72%); filter:blur(10px); }
+    #contact-orb { width:min(100%,480px); height:450px; overflow:visible; cursor:grab; touch-action:pan-y; }
+    #contact-orb:active { cursor:grabbing; }
+    .hint { position:absolute; right:0; bottom:19px; color:#8fa2ba; font:11px var(--mono); }
+    .hint span { color:var(--mint); }
+    footer { min-height:75px; display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--line); color:#8292a8; font:11px var(--mono); }
+    footer a { color:var(--muted); text-underline-offset:4px; }
+    footer a:hover { color:var(--paper); }
+    @media(max-width:760px) {
+      .page { width:min(100% - 38px,560px); }
+      header { height:69px; }
+      nav { gap:16px; font-size:12px; }
+      main { min-height:0; grid-template-columns:1fr; gap:4px; padding-block:61px 35px; }
+      h1 { font-size:clamp(57px,13vw,82px); }
+      .lead { font-size:15px; }
+      .orb-stage { height:min(90vw,400px); margin-top:5px; }
+      #contact-orb { height:100%; }
+      .hint { right:5px; bottom:2px; }
+    }
+    @media(max-width:390px) { nav { gap:11px; font-size:11px; } }
+    @media(prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important; transition-duration:.01ms!important; } }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <a class="brand" href="SeWa-info.html" aria-label="SeWa — головна сторінка"><span class="brand-mark">&lt;/&gt;</span>SeWa</a>
+      <nav aria-label="Головна навігація"><a href="SeWa-info.html">Про мене</a><a href="#contacts">Контакти</a></nav>
+    </header>
+    <main>
+      <section aria-labelledby="title">
+        <p class="eyebrow">Буду радий знайомству</p>
+        <h1 id="title">Напиши<span>мені.</span></h1>
+        <p class="lead">Є ідея, питання або просто хочеш поспілкуватися? Обирай зручний спосіб — я на зв’язку.</p>
+        <div class="contact-list" id="contacts">
+          <a class="contact" href="mailto:tisvitali@gmail.com">
+            <span class="icon" aria-hidden="true">@</span>
+            <span class="contact-copy"><small>Email</small><strong>tisvitali@gmail.com</strong></span>
+            <span class="external" aria-hidden="true">↗</span>
+          </a>
+          <a class="contact" href="https://t.me/maestro_ukraine" target="_blank" rel="noopener noreferrer">
+            <span class="icon" aria-hidden="true">➤</span>
+            <span class="contact-copy"><small>Telegram</small><strong>@maestro_ukraine</strong></span>
+            <span class="external" aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </section>
+      <div class="orb-stage">
+        <canvas id="contact-orb" aria-label="Інтерактивна 3D-сфера з символів повідомлень. Перетягни, щоб обертати."></canvas>
+        <div class="hint"><span>●</span> перетягни, щоб обертати</div>
+      </div>
+    </main>
+    <footer><span>SeWa · завжди відкритий до нових ідей</span><a href="#title">На початок ↑</a></footer>
+  </div>
+  <script>
+    (() => {
+      const canvas = document.getElementById('contact-orb'), ctx = canvas.getContext('2d');
+      const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const glyphs = ['@','✉','↗','{ }','</>','●','<3','✦','//','+'];
+      let w,h,dpr,points=[],rotY=0,rotX=-.13,drag=false,px=0,py=0,last=performance.now();
+      function resize() {
+        const box=canvas.getBoundingClientRect(); dpr=Math.min(devicePixelRatio||1,2); w=box.width; h=box.height;
+        canvas.width=Math.round(w*dpr); canvas.height=Math.round(h*dpr); ctx.setTransform(dpr,0,0,dpr,0,0);
+        points=Array.from({length:165},(_,i)=>{ const y=1-(i/164)*2, r=Math.sqrt(1-y*y), a=Math.PI*(3-Math.sqrt(5))*i; return {x:Math.cos(a)*r,y,z:Math.sin(a)*r,text:glyphs[i%glyphs.length],phase:i*2.39}; });
+      }
+      function draw(now) {
+        const dt=Math.min((now-last)/1000,.04); last=now; if(!drag&&!reduceMotion) rotY+=dt*.19;
+        ctx.clearRect(0,0,w,h); const radius=Math.min(w,h)*.405,cx=w*.5,cy=h*.49,cyR=Math.cos(rotY),syR=Math.sin(rotY),cxR=Math.cos(rotX),sxR=Math.sin(rotX);
+        const projected=points.map(p=>{ const x1=p.x*cyR+p.z*syR,z1=-p.x*syR+p.z*cyR,y1=p.y*cxR-z1*sxR,z2=p.y*sxR+z1*cxR,perspective=2.4/(2.4-z2*.3); return {x:cx+x1*radius*perspective,y:cy+y1*radius*perspective,z:z2,scale:perspective,phase:p.phase,text:p.text}; }).sort((a,b)=>a.z-b.z);
+        for(const p of projected){ const front=(p.z+1)/2; ctx.globalAlpha=.13+front*.84; ctx.fillStyle=p.phase%4<1?'#77ead0':'#96b8ff'; ctx.font=`${Math.max(8,(13+front*8)*p.scale)}px "DM Mono", monospace`; ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.fillText(p.text,p.x,p.y); }
+        ctx.globalAlpha=1; if(!reduceMotion) requestAnimationFrame(draw);
+      }
+      canvas.addEventListener('pointerdown',e=>{drag=true;px=e.clientX;py=e.clientY;canvas.setPointerCapture(e.pointerId);});
+      canvas.addEventListener('pointermove',e=>{if(!drag)return;rotY+=(e.clientX-px)*.008;rotX=Math.max(-1.1,Math.min(1.1,rotX+(e.clientY-py)*.006));px=e.clientX;py=e.clientY;if(reduceMotion)draw(performance.now());});
+      canvas.addEventListener('pointerup',()=>drag=false); canvas.addEventListener('pointercancel',()=>drag=false);
+      new ResizeObserver(resize).observe(canvas); resize(); draw(performance.now());
+    })();
+  </script>
+</body>
+</html>
