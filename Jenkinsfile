@@ -4,14 +4,14 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "macnaer/demo_smr621"
+        IMAGE_NAME = "macnaer/website"
     }
 
     stages {
 
-        stage("Build TodoAI image") {
+        stage("Build website image") {
             steps {
-                echo 'Building TodoAI image ...'
+                echo 'Building Demosite image ...'
                 sh """
                     docker build --no-cache -t ${IMAGE_NAME}:${env.BUILD_NUMBER} .
                 """
@@ -19,13 +19,13 @@ pipeline {
         }
 
 
-        stage("Deploy TodoAI on remote server") {
+        stage("Deploy Demo site") {
             steps {
-                echo "Deploying TodoAI on remote server ..."  
+                echo "Deploying Demo site ..."  
                 sh """
-                    docker stop todoai || true
-                    docker rm todoai || true
-                    docker run -d --name todoai --restart=always -p 80:80 macnaer/todoai:${env.BUILD_NUMBER}
+                    docker stop website || true
+                    docker rm website || true
+                    docker run -d --name website --restart=always -p 80:80 macnaer/website:${env.BUILD_NUMBER}
                     docker image prune -f
                 """
             }
