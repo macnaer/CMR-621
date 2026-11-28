@@ -1,35 +1,25 @@
-#!groovy
-
 pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "macnaer/website"
+        IMAGE_NAME = "demo_ci_site"
     }
 
     stages {
-
-        stage("Build website image") {
+        stage("Build Docker Image") {
             steps {
-                echo 'Building Demosite image ...'
-                sh """
-                    docker build --no-cache -t ${IMAGE_NAME}:${env.BUILD_NUMBER} .
-                """
+                sh "docker build --no-cache -t ${IMAGE_NAME}:${env.BUILD_NUMBER} ."
             }
         }
 
-
-        stage("Deploy Demo site") {
+        stage("Deploy Website") {
             steps {
-                echo "Deploying Demo site ..."  
                 sh """
-                    docker stop website || true
-                    docker rm website || true
-                    docker run -d --name website --restart=always -p 80:80 macnaer/website:${env.BUILD_NUMBER}
-                    docker image prune -f
+                    docker stop demo_ci_container || true
+                    docker rm demo_ci_container || true
+                    docker run -d --name demo_ci_container --restart=always -p 8088:80 ${IMAGE_NAME}:${env.BUILD_NUMBER}
                 """
             }
         }
-
     }
 }
