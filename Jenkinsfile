@@ -1,0 +1,35 @@
+#!groovy
+
+pipeline {
+    agent any
+
+    environment {
+        IMAGE_NAME = "macnaer/demo_smr621"
+    }
+
+    stages {
+
+        stage("Build TodoAI image") {
+            steps {
+                echo 'Building TodoAI image ...'
+                sh """
+                    docker build --no-cache -t ${IMAGE_NAME}:${env.BUILD_NUMBER} .
+                """
+            }
+        }
+
+
+        stage("Deploy TodoAI on remote server") {
+            steps {
+                echo "Deploying TodoAI on remote server ..."  
+                sh """
+                    docker stop todoai || true
+                    docker rm todoai || true
+                    docker run -d --name todoai --restart=always -p 80:80 macnaer/todoai:${env.BUILD_NUMBER}
+                    docker image prune -f
+                """
+            }
+        }
+
+    }
+}
